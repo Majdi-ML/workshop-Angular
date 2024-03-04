@@ -1,0 +1,22 @@
+<p>za7laaaaa oyage</p>
+
+<table class="table" border="1">
+    <tr>
+        <th>Id</th>
+        <th>description</th>
+        <th>depart</th>
+        <th>arrivé</th>
+        <th>nb_place</th>
+        <th>nb_view</th>
+    </tr>
+    <tr *ngFor="let i of listProduct , let p=index">
+        <ng-container >
+            <td> {{i.id}}</td>
+            <td> {{i.description}}</td>
+            <td> {{i.depart}}</td>
+            <td> {{i.arrive}}</td>
+            <td>{{i.nb_place}}</td>
+            <td>{{i.nb_view}}</td>   
+        </ng-container>
+    </tr>
+</table>

@@ -1,0 +1,62 @@
+<p>a7laaaaaa nessssss</p>
+
+<form [formGroup]="AddForm">
+    <label> id</label>
+    <input class="form-control" type="text" placeholder="id" formControlName="id">
+    <div class="alert alert-danger" *ngIf="this.AddForm.controls['id'].invalid && this.AddForm.controls['id'].touched">
+        <div *ngIf="this.AddForm.get('id')?.hasError('required')">
+            id required
+        </div>
+    </div>
+
+    <label> description</label>
+    <input class="form-control" type="text" placeholder="description" formControlName="description">
+
+    <div class="alert alert-danger" *ngIf="this.AddForm.controls['description'].invalid
+    && this.AddForm.controls['description'].touched">
+        <div *ngIf="this.AddForm.get('description')?.hasError('required')">description required</div>
+        <div *ngIf="this.AddForm.get('description')?.hasError('minlength')">description minLength 6</div>
+    </div>
+
+    <label> depart</label>
+    <input class="form-control" type="text" placeholder="depart" formControlName="depart">
+
+    <div class="alert alert-danger" *ngIf="this.AddForm.controls['depart'].invalid
+    && this.AddForm.controls['depart'].touched">
+        <div *ngIf="this.AddForm.get('depart')?.hasError('required')">depart required</div>
+        <div *ngIf="this.AddForm.get('depart')?.hasError('minlength')">depart doit debuter</div>
+    </div>
+
+    <label> arrive</label>
+    <input class="form-control" type="text" placeholder="arrive" formControlName="arrive">
+
+    <div class="alert alert-danger" *ngIf="this.AddForm.controls['arrive'].invalid
+    && this.AddForm.controls['arrive'].touched">
+        <div *ngIf="this.AddForm.get('arrive')?.hasError('required')">arrive required</div>
+        <div *ngIf="this.AddForm.get('arrive')?.hasError('minlength')">arrive minLength 6</div>
+    </div>
+    
+
+
+    
+
+    <label> nb_place</label>
+    <input class="form-control" type="text" placeholder="nb_place" formControlName="nb_place">
+
+    <div class="alert alert-danger" *ngIf="this.AddForm.controls['nb_place'].invalid
+    && this.AddForm.controls['nb_place'].touched">
+        <div *ngIf="this.AddForm.get('nb_place')?.hasError('required')">nb_place required</div>
+    </div>
+    <label> nb_view</label>
+    <input class="form-control" type="text" placeholder="nb_view" formControlName="nb_view">
+
+    <div class="alert alert-danger" *ngIf="this.AddForm.controls['nb_view'].invalid
+    && this.AddForm.controls['nb_view'].touched">
+        <div *ngIf="this.AddForm.get('nb_view')?.hasError('required')">nb_view required</div>
+    </div>
+
+    
+
+
+    <input class="btn btn-success" type="button" value="save" (click)="save()" [disabled]="AddForm.invalid">
+    <form>
